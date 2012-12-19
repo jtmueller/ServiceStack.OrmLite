@@ -51,9 +51,14 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>jtm-svcstack.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ServiceStack.Text, Version=3.4.3.1319, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ServiceStack.Text">
       <HintPath>..\..\lib\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -76,12 +81,6 @@
     <Compile Include="SqlServerOrmLiteDialectProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ServiceStack.OrmLite\ServiceStack.OrmLite.csproj">
-      <Project>{96179AC6-F6F1-40C3-9FDD-4F6582F54C5C}</Project>
-      <Name>ServiceStack.OrmLite</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -97,6 +96,15 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceStack.OrmLite\ServiceStack.OrmLite.csproj">
+      <Project>{96179ac6-f6f1-40c3-9fdd-4f6582f54c5c}</Project>
+      <Name>ServiceStack.OrmLite</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jtm-svcstack.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
